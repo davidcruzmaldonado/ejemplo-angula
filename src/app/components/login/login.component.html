@@ -1,8 +1,10 @@
 <div class="body">
   <div class="login">
-    <form [formGroup]="form" (ngSubmit)="ingresar()">
+    <mat-spinner *ngif = "loading" class ="spinner" diameter = "50"></mat-spinner>
+    
+    <form *ngif = "!loading" [formGroup]="form" (ngSubmit)="ingresar()">
       <img src= "./src/app/assets/img/img-login.png" width="50%">
-      <h2>Login </h2>
+      <h2>Acceso </h2>
       <mat-form-field class="ancho" appearance="fill">
         <mat-label>Usuario</mat-label>
         <input type = "text" matInput autocomplete="off" formControlName="usuario">
@@ -13,6 +15,6 @@
       </mat-form-field> 
       <br>
       <button type = "submit" class="ancho button" mat-raised-button color="primary" [disabled] ="form.invalid" >Ingresar</button>
-    </form>
+      </form>
   </div>
 </div>

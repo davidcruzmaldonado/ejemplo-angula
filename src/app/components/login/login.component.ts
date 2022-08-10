@@ -17,6 +17,7 @@ import {
 export class LoginComponent implements OnInit {
 
   form: FormGroup;
+  loading = true;
 
   constructor(private fb:FormBuilder, private _snackBar: MatSnackBar ) { 
     this.form = this.fb.group({

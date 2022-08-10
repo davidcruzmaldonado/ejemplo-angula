@@ -5,21 +5,26 @@
   align-items: center;
   background-color: white;
 }
-
 .login{
   width: 100%;
   max-width: 330px;
   text-align: center;
 }
 
-.ancho{
+.input{
+  height: 80px;
   width: 80%;
 }
 
 .button{
-  height: 50px;
+  height: 45px;
 }
 
 .spinner{
   margin: 0 auto;
+}
+
+.disclaimer{
+  color: blue;
+  text-align: center;
 }

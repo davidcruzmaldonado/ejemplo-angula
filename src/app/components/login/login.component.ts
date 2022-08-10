@@ -8,6 +8,7 @@ import {
 import {
   MatSnackBar
 } from '@angular/material/snack-bar';
+import { timeout } from 'rxjs';
 
 @Component({
   selector: 'app-login',
@@ -17,7 +18,7 @@ import {
 export class LoginComponent implements OnInit {
 
   form: FormGroup;
-  loading = true;
+  loading = false;
 
   constructor(private fb:FormBuilder, private _snackBar: MatSnackBar ) { 
     this.form = this.fb.group({
@@ -37,9 +38,11 @@ export class LoginComponent implements OnInit {
 
     if(usuario == 'davidc' && password == '1234'){
       //REDIRECCIONAMOS
+      this.fakeloading();
     }
       else{
         this.error();
+        this.form.reset();
       //mensaje de error
     }
   }
@@ -51,4 +54,11 @@ export class LoginComponent implements OnInit {
 
   }
 
+  fakeloading() {
+    this.loading = true;
+    setTimeout(() => {
+      //redireccionar al dashboard
+      this.loading = false;
+    }, 1500); 
+  }
 }

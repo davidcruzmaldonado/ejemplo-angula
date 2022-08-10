@@ -1,20 +1,27 @@
 <div class="body">
   <div class="login">
-    <mat-spinner *ngif = "loading" class ="spinner" diameter = "50"></mat-spinner>
+    <mat-spinner *ngIf = "loading" class ="spinner" diameter = "50"></mat-spinner>
     
-    <form *ngif = "!loading" [formGroup]="form" (ngSubmit)="ingresar()">
-      <img src= "./src/app/assets/img/img-login.png" width="50%">
+      <form *ngIf = "!loading" [formGroup]="form" (ngSubmit)="ingresar()">
+<!--      <img src= "./src/app/assets/img/img-login.png" width="50%"> -->
+      <h1 >Portal de Aplicación de Pagos Corporativos </h1>
+      <br> <br>
       <h2>Acceso </h2>
-      <mat-form-field class="ancho" appearance="fill">
+      <br>
+      <mat-form-field class="input" appearance= "fill">
         <mat-label>Usuario</mat-label>
         <input type = "text" matInput autocomplete="off" formControlName="usuario">
       </mat-form-field>
-      <mat-form-field class="ancho" appearance="fill">
+      <mat-form-field class="input" appearance="fill">
         <mat-label>Contraseña</mat-label>
         <input type = "password" matInput autocomplete="off"formControlName="password">
       </mat-form-field> 
       <br>
       <button type = "submit" class="ancho button" mat-raised-button color="primary" [disabled] ="form.invalid" >Ingresar</button>
-      </form>
+    </form>
   </div>
+</div>
+<div>
+<br><br><br><br><br><br><br><br><br>
+<p class= "disclaimer"> prototipo agosto 2022</p>
 </div>

@@ -4,6 +4,9 @@ import { FormsModule } from '@angular/forms';
 
 //Material
 import { MatSliderModule } from '@angular/material/slider';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import {MatButtonModule} from '@angular/material/button';
 
 
 import { AppComponent } from './app.component';
@@ -13,7 +16,7 @@ import { HelloComponent } from './hello.component';
 import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
-  imports:      [ BrowserModule, FormsModule, MatSliderModule ],
+  imports:      [ BrowserModule, FormsModule, MatSliderModule,MatFormFieldModule,MatInputModule,MatButtonModule],
   declarations: [ AppComponent, HelloComponent, LoginComponent ],
   bootstrap:    [ AppComponent ]
 })

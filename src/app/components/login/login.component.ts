@@ -1,5 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { 
+  FormBuilder, 
+  FormGroup, 
+  Validators 
+} from '@angular/forms';
+
+import {
+  MatSnackBar
+} from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-login',
@@ -10,7 +18,7 @@ export class LoginComponent implements OnInit {
 
   form: FormGroup;
 
-  constructor(private fb:FormBuilder) { 
+  constructor(private fb:FormBuilder, private _snackBar: MatSnackBar ) { 
     this.form = this.fb.group({
       usuario: ['',Validators.required],
       password: ['',Validators.required]
@@ -21,7 +29,25 @@ export class LoginComponent implements OnInit {
   }
 
   ingresar () {
-    console.log(this.form)
+    const usuario = this.form.value.usuario;
+    const password = this.form.value.password;
+    console.log(usuario)
+    console.log(password)
+
+    if(usuario == 'davidc' && password == '1234'){
+      //REDIRECCIONAMOS
+    }
+      else{
+        this.error();
+      //mensaje de error
+    }
+  }
+  error (){
+    this._snackBar.open('Usuario o contraseña ingresados inválidos','Cerrar',{
+      horizontalPosition: 'center',
+      verticalPosition: 'bottom',
+    })
+
   }
 
 }
